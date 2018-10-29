@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>venues</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <button ion-button round>Primary Round test</button>
+
+  <ion-card *ngIf="hasPrev()">
+    <ion-card-content>
+      <button ion-button full (click)="prevPage()">Previous Page</button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngFor="let venue of venues">
+    <ion-card-content>
+      <ion-card-title>{{ venue.name }}</ion-card-title>
+      <p>{{ venue.city }}</p>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <button ion-button full (click)="nextPage()">Next Page</button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
